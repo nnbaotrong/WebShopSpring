@@ -26,8 +26,8 @@
 <!-- Favicons -->
 <link rel="shortcut icon"
 	href="<c:url value="/assets/user/ico/favicon.ico"/>">
-	
-	<decorator:head />
+
+<decorator:head />
 </head>
 <body>
 	<!-- 
@@ -45,12 +45,11 @@
 					</div>
 					<a class="active" href="index.html"> <span class="icon-home"></span>
 						Home
-					</a> <a href="#"><span class="icon-user"></span> My Account</a> <a
-						href="register.html"><span class="icon-edit"></span> Free
-						Register </a> <a href="contact.html"><span class="icon-envelope"></span>
-						Contact us</a> <a href="cart.html"><span
-						class="icon-shopping-cart"></span> 2 Item(s) - <span
-						class="badge badge-warning"> $448.42</span></a>
+					</a> <a href="#"><span class="icon-user"></span> Tài khoản</a> <a
+						href="<c:url value="dang-ky"/>"><span class="icon-edit"></span> Đăng ký </a>
+					 <a href="cart.html"><span
+						class="icon-shopping-cart"></span> ${TotalQuantyCart } Sản phẩm -
+						<span class="badge badge-warning"> ${TotalPriceCart}</span></a>
 				</div>
 			</div>
 		</div>
@@ -93,5 +92,7 @@ Lower Header Section
 		<script
 			src="<c:url value="/assets/user/js/jquery.scrollTo-1.4.3.1-min.js"/>"></script>
 		<script src="<c:url value="/assets/user/js/shop.js"/>"></script>
+
+		<decorator:getProperty property="page.script	"></decorator:getProperty>
 </body>
 </html>

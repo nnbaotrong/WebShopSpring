@@ -22,7 +22,7 @@ Body Section
 
 					<li><a class="totalInCart" href="cart.html"><strong>Total
 								Amount <span class="badge badge-warning pull-right"
-								style="line-height: 18px;">$448.42</span>
+								style="line-height: 18px;">${TotalPriceCart}</span>
 						</strong></a></li>
 				</ul>
 			</div>
@@ -139,7 +139,7 @@ New Products
 									<c:forEach var="item" items="${n_products }" varStatus="loop">
 										<li class="span3">
 											<div class="thumbnail">
-												<a class="zoomTool" href="#" title="add to cart"><span
+												<a class="zoomTool" href="<c:url value="/AddCart/${ item.id_product }"/>" title="add to cart"><span
 										class="icon-search"></span> QUICK VIEW</a> <a
 										href="detail/${ item.id_product }"><img
 										src="<c:url value="/assets/user/img/${ item.img }"/>" alt=""></a>
@@ -190,7 +190,7 @@ New Products
 						<c:forEach var="item" items="${ h_products }" varStatus="loop">
 							<li class="span4">
 								<div class="thumbnail">
-									<a class="zoomTool" href="#" title="add to cart"><span
+									<a class="zoomTool" href="<c:url value="/AddCart/${ item.id_product }"/>" title="add to cart"><span
 										class="icon-search"></span> QUICK VIEW</a> <a
 										href="detail/${ item.id_product }"><img
 										src="<c:url value="/assets/user/img/${ item.img }"/>" alt=""></a>

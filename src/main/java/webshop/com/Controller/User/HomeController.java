@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController extends BaseController{
-	;
+	
 
 	@RequestMapping(value = { "/", "home" })
 	public ModelAndView Index() {
@@ -17,6 +17,7 @@ public class HomeController extends BaseController{
 		_mvShare.addObject("h_products", _homeServiceImpl.GetHighlightProductsDto());
 		_mvShare.addObject("n_products", _homeServiceImpl.GetNewProductsDto());
 		_mvShare.setViewName("user/index");
+		//_mvShare.setViewName("user/cart/list_cart");
 		return _mvShare;
 	}
 
