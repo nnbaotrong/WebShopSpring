@@ -9,31 +9,19 @@
 	<div class="row">
 		<div id="sidebar" class="span3">
 			<div class="well well-small">
-				<ul class="nav nav-list">
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Watches</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fine Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Men's Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Vintage & Antique</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Diamonds </a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Beads</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-					<li style="border: 0">&nbsp;</li>
+						<ul class="nav nav-list">
+
+					<c:forEach var="item" items="${categorys }">
+
+						<li><a href="<c:url value="/category/${item.id }"/>"><span
+								class="icon-circle-blank"></span> ${item.name }</a></li>
+
+					</c:forEach>
+
+
 					<li><a class="totalInCart" href="cart.html"><strong>Total
 								Amount <span class="badge badge-warning pull-right"
-								style="line-height: 18px;">$448.42</span>
+								style="line-height: 18px;">${TotalPriceCart}</span>
 						</strong></a></li>
 				</ul>
 			</div>
@@ -113,7 +101,7 @@
 					<div class="well">
 						<h5>Đăng ký tài khoản</h5>
 						<br />
-
+<h5>${status }</h5>
 						<form:form action="dang-ky" method="POST" modelAttribute="user">
 							<div class="control-group">
 								<label class="control-label" for="inputEmail">Email</label>
@@ -157,18 +145,22 @@
 				<div class="span4">
 					<div class="well">
 						<h5>Đăng nhập</h5>
-						<form>
+						<h5>${LoginInfo }</h5>
+						<form:form action="dang-nhap" method="POST" modelAttribute="user">
 							<div class="control-group">
 								<label class="control-label" for="inputEmail">Email</label>
 								<div class="controls">
-									<input class="span3" type="text" placeholder="Email">
+									
+									<form:input type="text" class="span3" path="user"
+										placeholder="Mời nhập email" />
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputPassword">Mật
 									khẩu</label>
 								<div class="controls">
-									<input type="password" class="span3" placeholder="Password">
+									<form:input type="password" class="span3" path="password"
+										placeholder="Mời nhập mật khẩu" />
 								</div>
 							</div>
 							<div class="control-group">
@@ -177,7 +169,7 @@
 									<a href="#">Quên mật khẩu?</a>
 								</div>
 							</div>
-						</form>
+						</form:form>
 					</div>
 				</div>
 			</div>
